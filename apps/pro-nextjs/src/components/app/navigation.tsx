@@ -119,9 +119,7 @@ const User: React.FC<{className?: string}> = ({className}) => {
               default="mp"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-medium">
-                {sessionData?.user?.name}
-              </span>
+              <span className="text-sm">{sessionData?.user?.name}</span>
             </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
