@@ -1361,6 +1361,7 @@ importers:
       '@types/uuid': ^9.0.2
       '@vercel/og': ^0.5.4
       autoprefixer: ^10.4.2
+      aws-sdk: ^2.1452.0
       axios: ^1.4.0
       class-variance-authority: ^0.6.0
       classnames: ^2.3.1
@@ -1471,6 +1472,7 @@ importers:
       '@trpc/server': 10.7.0
       '@types/uuid': 9.0.2
       '@vercel/og': 0.5.4
+      aws-sdk: 2.1452.0
       axios: 1.4.0
       class-variance-authority: 0.6.0_typescript@5.1.6
       classnames: 2.3.1
@@ -17438,6 +17440,22 @@ packages:
       xml2js: 0.4.19
     dev: false
 
+  /aws-sdk/2.1452.0:
+    resolution: {integrity: sha512-PiCNbl3DPwiQPqQwkugfO+YaDxWz1BZ8m/05R7MSsOQ1VB9eXDNESASKkz9jEdDbM4u/olZIljV6HVZ9e6044g==}
+    engines: {node: '>= 10.0.0'}
+    dependencies:
+      buffer: 4.9.2
+      events: 1.1.1
+      ieee754: 1.1.13
+      jmespath: 0.16.0
+      querystring: 0.2.0
+      sax: 1.2.1
+      url: 0.10.3
+      util: 0.12.4
+      uuid: 8.0.0
+      xml2js: 0.5.0
+    dev: false
+
   /aws-sign2/0.7.0:
     resolution: {integrity: sha512-08kcGqnYf/YmjoRhfxyu+CLxBjUtHLXLXX/vUfx9l2LYzG3c1m61nrpyFUZI6zeS+Li/wWMMidD9KgrqtGq3mA==}
     dev: false
@@ -23062,9 +23080,6 @@ packages:
       for-in: 1.0.2
     dev: false
 
-  /foreach/2.0.5:
-    resolution: {integrity: sha512-ZBbtRiapkZYLsqoPyZOR+uPfto0GRMNQN1GwzZtZt7iZvPPbDDQV0JF5Hx4o/QFQ5c0vyuoZ98T8RSBbopzWtA==}
-
   /forever-agent/0.6.1:
     resolution: {integrity: sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw==}
     dev: false
@@ -25329,16 +25344,6 @@ packages:
       call-bind: 1.0.2
       for-each: 0.3.3
       gopd: 1.0.1
-      has-tostringtag: 1.0.0
-
-  /is-typed-array/1.1.8:
-    resolution: {integrity: sha512-HqH41TNZq2fgtGT8WHVFVJhBVGuY3AnP3Q36K8JKXUxSxRgk/d+7NjmwG2vo2mYmXK8UYZKu0qH8bVP5gEisjA==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      available-typed-arrays: 1.0.5
-      call-bind: 1.0.2
-      es-abstract: 1.21.2
-      foreach: 2.0.5
       has-tostringtag: 1.0.0
 
   /is-typedarray/1.0.0:
@@ -38497,9 +38502,9 @@ packages:
       inherits: 2.0.4
       is-arguments: 1.1.1
       is-generator-function: 1.0.10
-      is-typed-array: 1.1.8
+      is-typed-array: 1.1.10
       safe-buffer: 5.2.1
-      which-typed-array: 1.1.7
+      which-typed-array: 1.1.9
 
   /utility-types/3.10.0:
     resolution: {integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==}
@@ -38980,17 +38985,6 @@ packages:
       path-exists: 4.0.0
     dev: false
 
-  /which-typed-array/1.1.7:
-    resolution: {integrity: sha512-vjxaB4nfDqwKI0ws7wZpxIlde1XrLX5uB0ZjpfshgmapJMD7jJWhZI+yToJTqaFByF0eNBcYxbjmCzoRP7CfEw==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      available-typed-arrays: 1.0.5
-      call-bind: 1.0.2
-      es-abstract: 1.21.2
-      foreach: 2.0.5
-      has-tostringtag: 1.0.0
-      is-typed-array: 1.1.10
-
   /which-typed-array/1.1.9:
     resolution: {integrity: sha512-w9c4xkx6mPidwp7180ckYWfMmvxpjlZuIudNtDf4N/tTAUB8VJbX25qZoAsrtGuYNnGw3pa0AXgbGKRB8/EceA==}
     engines: {node: '>= 0.4'}
@@ -39153,6 +39147,19 @@ packages:
     dependencies:
       sax: 1.2.4
       xmlbuilder: 9.0.7
+    dev: false
+
+  /xml2js/0.5.0:
+    resolution: {integrity: sha512-drPFnkQJik/O+uPKpqSgr22mpuFHqKdbS835iAQrUC73L2F5WkboIRd63ai/2Yg6I1jzifPFKH2NTK+cfglkIA==}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      sax: 1.2.4
+      xmlbuilder: 11.0.1
+    dev: false
+
+  /xmlbuilder/11.0.1:
+    resolution: {integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==}
+    engines: {node: '>=4.0'}
     dev: false
 
   /xmlbuilder/9.0.7:

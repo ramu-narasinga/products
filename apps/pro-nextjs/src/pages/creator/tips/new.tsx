@@ -3,6 +3,7 @@ import CreateTipForm from '@/module-builder/create-tip-form'
 import Layout from '@/components/app/layout'
 import {Alert, AlertDescription, AlertTitle} from '@skillrecordings/ui'
 import {GrInfo} from 'react-icons/gr'
+import VideoUploader from '@/module-builder/video-uploader'
 
 const NewTip = () => {
   return (
@@ -21,6 +22,7 @@ const NewTip = () => {
         </Alert>
         <br />
         <CreateTipForm />
+        <VideoUploader />
       </main>
     </Layout>
   )
