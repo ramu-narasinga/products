@@ -22,7 +22,6 @@ const NewTip = () => {
         </Alert>
         <br />
         <CreateTipForm />
-        <VideoUploader />
       </main>
     </Layout>
   )

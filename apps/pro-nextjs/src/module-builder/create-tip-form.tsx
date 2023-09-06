@@ -19,7 +19,7 @@ import {z} from 'zod'
 import {useFileChange} from './use-file-change'
 import {trpc} from '../trpc/trpc.client'
 import {useRouter} from 'next/router'
-import {processFile} from './cloudinary-video-uploader'
+import {uploadToS3} from './upload-file'
 
 type CreateTipFormState = 'idle' | 'ready' | 'uploading' | 'success' | 'error'
 
@@ -48,18 +48,24 @@ const CreateTipForm: React.FC = () => {
     try {
       if (fileType && fileContents) {
         setTipFormState('uploading')
-        const uploadResponse: {secure_url: string} = await processFile(
+
+        // The uploadToS3 function returns a publicUrl.
+        const publicUrl = await uploadToS3({
+          fileType,
           fileContents,
-          (progress) => {
-            setProgress(progress)
+          onUploadProgress: (progressEvent) => {
+            const percentCompleted = Math.round(
+              (progressEvent.loaded * 100) / (progressEvent.total || 1),
+            )
+            setProgress(percentCompleted / 100)
           },
-        )
+        })
 
         setTipFormState('success')
 
         createTip(
           {
-            s3Url: uploadResponse.secure_url,
+            s3Url: publicUrl,
             fileName,
             title: values.title,
           },
