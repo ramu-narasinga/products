@@ -1,7 +1,7 @@
 import React from 'react'
-import {trpc} from '../../../trpc/trpc.client'
-import EditTip from 'pages/creator/tips/[slug]/index'
-import {getAllTips, TipSchema} from 'lib/tips'
+import {trpc} from '@/trpc/trpc.client'
+import EditTip from '@/pages/creator/tips/[slug]/index'
+import {getAllTips, TipSchema} from '@/lib/tips'
 import {first, groupBy} from 'lodash'
 import {GetServerSideProps} from 'next'
 
