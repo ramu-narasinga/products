@@ -114,12 +114,12 @@ const User: React.FC<{className?: string}> = ({className}) => {
             className={cn('mr-3 flex items-center space-x-1', className)}
           >
             <Gravatar
-              className="h-8 w-8 rounded-full"
+              className="h-4 w-4 rounded-full"
               email={sessionData?.user?.email}
               default="mp"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-bold leading-tight">
+              <span className="text-sm font-medium">
                 {sessionData?.user?.name}
               </span>
             </div>
