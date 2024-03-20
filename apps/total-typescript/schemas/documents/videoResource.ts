@@ -59,5 +59,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'duration',
+      title: 'Duration',
+      type: 'number',
+      readOnly: true,
+    },
   ],
 }
